@@ -1,8 +1,8 @@
+const PORT = process.env.PORT || 3001;
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
-const PORT = process.env.PORT || 3001;
 const userInput = require('./db/db.json');
 
 // code goes here
@@ -12,18 +12,18 @@ app.use(express.urlencoded({
 app.use(express.static('public'));
 app.use(express.json());
 
-// connect front to back
+// route connecting front and back
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
-app.get('/api/notes', (req, res) => {
-    res.json(userInput.slice(1));
-});
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
+});
+app.get('/api/notes', (req, res) => {
+    res.json(userInput.slice(1));
 });
 
 // function to make a new note
