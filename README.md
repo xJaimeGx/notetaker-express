@@ -13,7 +13,7 @@ This project is used to take notes of anything you need to remember throughout t
 - [Questions](#questions)
 
 ## Installation
-Install this project using node.js and using the express.js package.
+Install this project using node.js and using the express.js package. After everything is installed, run 'node server.js' or 'npm start' to start server.
 
 ## Usage
 This project can be used to stay organized.
